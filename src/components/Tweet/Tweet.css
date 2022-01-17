@@ -1,20 +1,85 @@
+a {
+  width: fit-content;
+  margin: 0 auto;
+  text-decoration: none;
+  color: black;
+}
+
 .tweets {
-  width: 100vw;
+  width: 100%;
   display: flex;
-  flex-direction: column-reverse;
+  flex-direction: column;
 }
 
 .twitter-card {
+  font-family: "Lato", sans-serif;
   background-color: #fff;
-  border: 1px solid #e1e8ed;
-  border-radius: 3px;
+  border: 1px solid #fc5000;
+  border-radius: 15px;
   box-shadow: 0 1px 1px rgba(0, 0, 0, 0.04);
   margin: 0 auto;
+  margin-top: 20px;
   max-width: 500px;
+  width: 100vw;
   padding: 20px;
   width: 100%;
   animation: fadeIn 1s cubic-bezier(0.85, 0, 0.15, 1);
-  margin-bottom: 20px;
+}
+
+.twitter-header {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.twitter-header img {
+  border-radius: 50%;
+  height: 45px;
+  width: 45px;
+}
+
+.twitter-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.twitter-user {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.twitter-user p {
+  font-size: 16px;
+  font-weight: bold;
+  margin: 0;
+}
+
+.twitter-user .handle {
+  opacity: 0.7;
+  font-size: 12px;
+  font-weight: bold;
+  color: #999;
+}
+
+.twitter-date p {
+  margin: 0;
+  opacity: 0.7;
+  margin-top: 5px;
+  font-size: 12px;
+  font-weight: bold;
+  color: #999;
+}
+
+.twitter-body {
+  margin-top: 25px;
+}
+
+.twitter-image {
+  margin-top: 25px;
+  width: 500px;
+  object-fit: cover;
+  border-radius: 15px;
 }
 
 @keyframes fadeIn {

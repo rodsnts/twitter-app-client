@@ -1,5 +1,9 @@
+body {
+  background-color: #e8f0f3;
+}
+
 .App {
-  height: 100vh;
+  height: 100%;
   width: 100vw;
   flex-direction: column;
   display: flex;

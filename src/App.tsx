@@ -1,30 +1,42 @@
 import React, { useEffect, useState } from "react";
 import { io } from "socket.io-client";
 
-import Tweet from "./components/Tweet/Tweet";
+import { Tweet, RecentTweets } from "./components/Tweet/Tweet";
 
 import "./App.css";
 
 function App() {
+  const API = "https://twitter-app-node.herokuapp.com";
+
   const [tweets, setTweets] = useState([]);
+  const [recentTweetsData, setRecentTweetsData]: any = useState([]);
 
   useEffect(() => {
-    const socket = io("https://twitter-app-node.herokuapp.com/");
+    const socket = io(API);
 
     socket.on("connect", () => {
       console.log("Connected to server");
     });
 
     socket.on("tweet", (tweet) => {
-      console.log(tweet);
+      console.log("Tweet received", tweet);
       setTweets((prevTweets) => [tweet, ...prevTweets]);
+    });
+
+    fetch(`${API}/tweets`).then((res) => {
+      res.json().then(async (data) => {
+        setRecentTweetsData(data);
+      });
     });
   }, []);
 
   return (
     <div className="App">
       <h1>Tweets</h1>
-      <Tweet tweets={tweets} />
+      <div className="tweets">
+        <Tweet tweets={tweets} />
+        <RecentTweets recentTweets={recentTweetsData} />
+      </div>
     </div>
   );
 }
