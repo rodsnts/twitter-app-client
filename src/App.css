@@ -7,36 +7,6 @@
   align-items: center;
 }
 
-.tweets {
-  width: 100vw;
-  display: flex;
-  flex-direction: column-reverse;
-}
-
 h1 {
   text-align: center;
-}
-
-.twitter-card {
-  background-color: #fff;
-  border: 1px solid #e1e8ed;
-  border-radius: 3px;
-  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.04);
-  margin: 0 auto;
-  max-width: 500px;
-  padding: 20px;
-  width: 100%;
-  animation: fadeIn 1s cubic-bezier(0.85, 0, 0.15, 1);
-  margin-bottom: 20px;
-}
-
-@keyframes fadeIn {
-  0% {
-    transform: translateX(-10px);
-    opacity: 0;
-  }
-  100% {
-    transform: translateY(0px);
-    opacity: 1;
-  }
 }

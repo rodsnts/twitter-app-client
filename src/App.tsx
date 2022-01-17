@@ -1,9 +1,12 @@
 import React, { useEffect, useState } from "react";
 import { io } from "socket.io-client";
+
+import Tweet from "./components/Tweet/Tweet";
+
 import "./App.css";
 
 function App() {
-  const [tweets, setTweets]: any = useState([]);
+  const [tweets, setTweets] = useState([]);
 
   useEffect(() => {
     const socket = io("https://twitter-app-node.herokuapp.com/");
@@ -14,21 +17,14 @@ function App() {
 
     socket.on("tweet", (tweet) => {
       console.log(tweet);
-      setTweets((prevTweets: any) => [tweet, ...prevTweets]);
+      setTweets((prevTweets) => [tweet, ...prevTweets]);
     });
   }, []);
 
   return (
     <div className="App">
       <h1>Tweets</h1>
-      <div className="tweets">
-        {tweets.map((tweet: any) => (
-          <div key={tweet.data.id} className="twitter-card">
-            <h3>{tweet.data.text}</h3>
-            <p>@{tweet.includes.users[0].username}</p>
-          </div>
-        ))}
-      </div>
+      <Tweet tweets={tweets} />
     </div>
   );
 }
