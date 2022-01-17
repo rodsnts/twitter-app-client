@@ -6,7 +6,7 @@ function App() {
   const [tweets, setTweets]: any = useState([]);
 
   useEffect(() => {
-    const socket = io("localhost:4000");
+    const socket = io("https://twitter-app-node.herokuapp.com/");
 
     socket.on("connect", () => {
       console.log("Connected to server");
