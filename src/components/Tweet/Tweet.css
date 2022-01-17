@@ -22,7 +22,6 @@ a {
   max-width: 500px;
   width: 100vw;
   padding: 20px;
-  width: 100%;
   animation: fadeIn 1s cubic-bezier(0.85, 0, 0.15, 1);
 }
 
