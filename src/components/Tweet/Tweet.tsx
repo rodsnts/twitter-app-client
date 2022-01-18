@@ -101,7 +101,12 @@ export const RecentTweets = ({ recentTweets }) => {
               </div>
             </div>
             <div className="twitter-body">
-              <p>{tweet.text}</p>
+              <p>
+                {tweet.text.match(/^((?!#[a-zA-Z0-9]).)*/g)}
+                <span className="hash">
+                  {tweet.text.match(/#[a-zA-Z0-9]*/g)}
+                </span>
+              </p>
               {recentTweets.includes?.media[i] ? (
                 <img
                   src={recentTweets?.includes?.media[i]?.preview_image_url}
