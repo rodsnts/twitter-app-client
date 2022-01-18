@@ -9,7 +9,7 @@ function App() {
   const API = "https://twitter-app-node.herokuapp.com";
 
   const [tweets, setTweets] = useState([]);
-  const [recentTweetsData, setRecentTweetsData]: any = useState([]);
+  const [recentTweetsData, setRecentTweetsData] = useState([]);
 
   useEffect(() => {
     const socket = io(API);
